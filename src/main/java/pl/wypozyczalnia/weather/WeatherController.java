@@ -21,7 +21,7 @@ public class WeatherController {
     private ApiCallLimiter limiter = new ApiCallLimiter();
     private WeatherCache cache = new WeatherCache();
 
-    @GetMapping("/hello")
+    @GetMapping("/forecast")
     public Object hello(String city) {
 
         // if cached than return
