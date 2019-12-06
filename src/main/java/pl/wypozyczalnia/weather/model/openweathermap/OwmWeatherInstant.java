@@ -11,6 +11,7 @@ public class OwmWeatherInstant {
     private OwmSys sys;
     private String dt_txt;
     private OwmRain rain;
+    private OwmSnow snow;
 
 
     public OwmRain getRain() {
@@ -89,5 +90,13 @@ public class OwmWeatherInstant {
                 ", dt_txt='" + dt_txt + '\'' +
                 ", rain=" + rain +
                 '}';
+    }
+
+    public OwmSnow getSnow() {
+        return snow;
+    }
+
+    public void setSnow(OwmSnow snow) {
+        this.snow = snow;
     }
 }

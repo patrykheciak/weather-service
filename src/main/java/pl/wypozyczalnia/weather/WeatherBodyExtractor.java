@@ -17,7 +17,9 @@ public class WeatherBodyExtractor {
                 double tempCels = weatherInstant.getMain().getTemp() - 273.15;
                 Date date = new Date(1000 * weatherInstant.getDt());
                 double rain = weatherInstant.getRain() == null ? 0.0 : weatherInstant.getRain().getH();
-                bodies.add(new WeatherBody(date, wr.getCity().getName(), String.format("%.2f", tempCels), rain));
+                double snow = weatherInstant.getSnow() == null ? 0.0 : weatherInstant.getSnow().getH();
+                String icon = weatherInstant.getWeather().get(0).getIcon();
+                bodies.add(new WeatherBody(date, wr.getCity().getName(), String.format("%.2f", tempCels), rain, snow, icon));
             }
             return bodies;
         }

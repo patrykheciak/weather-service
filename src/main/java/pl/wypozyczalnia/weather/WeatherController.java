@@ -35,7 +35,7 @@ public class WeatherController {
             String apiResponse = api.getWeather(city);
             limiter.called();
             System.out.println("Retrieved from API");
-
+            System.out.println(apiResponse);
             ObjectMapper mapper = new ObjectMapper();
             try {
                 JsonNode jsonNode = mapper.readTree(apiResponse);
